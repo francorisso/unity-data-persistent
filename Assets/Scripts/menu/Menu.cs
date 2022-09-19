@@ -9,4 +9,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OnPlayerNameChange(string name)
+    {
+        UIMainManager.playerName = name;
+    }
 }

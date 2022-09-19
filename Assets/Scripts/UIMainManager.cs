@@ -5,29 +5,20 @@ using UnityEngine;
 
 public class UIMainManager : MonoBehaviour
 {
-    public static UIMainManager Instance;
+    public static UIMainManager Instance = null;
+    public static string playerName = "Anonymous";
+
+    public static int maxScore = 0;
 
     void Awake()
     {
-        if (Instance != null)
+        if (UIMainManager.Instance != null)
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
-        DontDestroyOnLoad(Instance);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        UIMainManager.Instance = this;
+        DontDestroyOnLoad(UIMainManager.Instance);
     }
 }
